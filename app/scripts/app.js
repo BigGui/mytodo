@@ -19,8 +19,8 @@ angular
     'ui.sortable',
     'LocalStorageModule'
   ])
-  .config(['localStorgaeServiceProvider', function(localStorgaeServiceProvider){
-	  localStorgaeServiceProvider.setPrefix('ls');
+  .config(['localStorageServiceProvider', function(localStorageServiceProvider){
+	  localStorageServiceProvider.setPrefix('ls');
   }])
   .config(function ($routeProvider) {
     $routeProvider
