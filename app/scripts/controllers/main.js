@@ -11,7 +11,7 @@ angular.module('mytodoApp')
   .controller('MainCtrl', function ($scope) {
 	
 	// Item au chargement
-	$scope.todos = ['Item 1', 'Item 2', 'Item 3', 'Roger', 'Roger 2'];
+	$scope.todos = [];
 
 	// Ajoute un item
 	$scope.addTodo = function () {
