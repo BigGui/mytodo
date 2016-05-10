@@ -8,10 +8,18 @@
  * Controller of the mytodoApp
  */
 angular.module('mytodoApp')
-  .controller('MainCtrl', function ($scope) {
+  .controller('MainCtrl', function ($scope, localStorageService) {
 	
-	// Item au chargement
-	$scope.todos = [];
+	// Récupère la list stockée en local
+	var todosInStorage = localStorageService.get('todos');
+	
+	// Initialise avec le stockage ou à vide
+	$scope.todos = todosInStore || [];
+	
+	// Watch les changements pour les stocker
+	$scope.$watch('todos', function () {
+		localStorageService.set('todos', $scope.todos);
+	}, true);
 
 	// Ajoute un item
 	$scope.addTodo = function () {
