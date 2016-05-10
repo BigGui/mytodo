@@ -11,7 +11,7 @@ angular.module('mytodoApp')
   .controller('MainCtrl', function ($scope, localStorageService) {
 	
 	// Récupère la list stockée en local
-	var todosInStorage = localStorageService.get('todos');
+	var todosInStore = localStorageService.get('todos');
 	
 	// Initialise avec le stockage ou à vide
 	$scope.todos = todosInStore || [];
